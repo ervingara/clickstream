@@ -1,6 +1,6 @@
 package com.google.code.clickstream;
 
-import com.opensymphony.clickstream.logger.ClickstreamLoggerFactory;
+import com.google.code.clickstream.logger.ClickstreamLoggerFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 

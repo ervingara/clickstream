@@ -1,4 +1,4 @@
-package com.opensymphony.clickstream.logger;
+package com.google.code.clickstream.logger;
 
 import com.google.code.clickstream.config.ConfigLoader;
 import org.apache.commons.logging.Log;

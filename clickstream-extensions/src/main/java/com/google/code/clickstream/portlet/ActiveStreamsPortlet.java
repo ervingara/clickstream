@@ -62,10 +62,10 @@ public class ActiveStreamsPortlet extends GenericPortlet {
         PrintWriter out = response.getWriter();
 
         if (sid == null) {
-            ClickstreamExtensionUtils.printClickstreamList(clickstreams, out, this.isFragment, ClickstreamExtensionUtils.detectShowbots(showbots));
+            ClickstreamExtensionUtils.printClickstreamList(clickstreams, out, this.isFragment, showbots, response.createRenderURL());
         }
         else {
-            ClickstreamExtensionUtils.printClickstreamDetail(clickstreams, out, sid, this.isFragment, showbots);
+            ClickstreamExtensionUtils.printClickstreamDetail(clickstreams, out, sid, this.isFragment, showbots, response.createRenderURL());
         }
 
         if (! isFragment) {
