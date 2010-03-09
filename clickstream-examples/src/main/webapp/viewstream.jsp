@@ -1,6 +1,4 @@
-<%@ page import="java.util.*,
-                 com.opensymphony.clickstream.Clickstream,
-                 com.opensymphony.clickstream.ClickstreamRequest" %>
+<%@ page import="java.util.*, com.google.code.clickstream.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <%
@@ -10,13 +8,14 @@ if (request.getParameter("sid") == null)
 	return;
 }
 
-Map clickstreams = (Map)application.getAttribute("clickstreams");
+Map<String, Clickstream> clickstreams = (Map<String, Clickstream>) application.getAttribute("clickstreams");
 
 Clickstream stream = null;
+String sid = request.getParameter("sid");
 
-if (clickstreams.get(request.getParameter("sid")) != null)
+if (clickstreams.get(sid) != null)
 {
-	stream = (Clickstream)clickstreams.get(request.getParameter("sid"));
+	stream = (Clickstream) clickstreams.get(sid);
 }
 
 if (stream == null)
@@ -37,7 +36,7 @@ if (stream == null)
 
         <b>Initial Referrer</b>: <a href="<%= stream.getInitialReferrer() %>"><%= stream.getInitialReferrer() %></a><br>
         <b>Hostname</b>: <%= stream.getHostname() %><br>
-        <b>Session ID</b>: <%= request.getParameter("sid") %><br>
+        <b>Session ID</b>: <%= sid %><br>
         <b>Bot</b>: <%= stream.isBot() ? "Yes" : "No" %><br>
         <b>Stream Start</b>: <%= stream.getStart() %><br>
         <b>Last Request</b>: <%= stream.getLastRequest() %><br>
@@ -58,17 +57,15 @@ if (stream == null)
         <ol>
         <%
         synchronized(stream) {
-            Iterator clickstreamIt = stream.getStream().iterator();
-
-            while (clickstreamIt.hasNext())
+            for (ClickstreamRequest cr : stream.getStream())
             {
-                String click = ((ClickstreamRequest)clickstreamIt.next()).toString();
+                String click = cr.toString();
             %>
             <li><a href="http://<%= click %>"><%= click %></a></li>
             <%
             }
         }
         %>
-        </table>
+        </ol>
     </body>
 </html>

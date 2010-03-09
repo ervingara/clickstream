@@ -87,6 +87,7 @@ public class ConfigLoader {
      * config objects.
      */
     private class ConfigHandler extends DefaultHandler {
+        @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
             if (qName.equals("logger")) {
                 config.setLoggerClass(attributes.getValue("class"));

@@ -6,7 +6,7 @@
 
     <filter>
         <filter-name>clickstream</filter-name>
-        <filter-class>com.opensymphony.clickstream.ClickstreamFilter</filter-class>
+        <filter-class>com.google.code.clickstream.ClickstreamFilter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -15,12 +15,12 @@
     </filter-mapping>
 
     <listener>
-        <listener-class>com.opensymphony.clickstream.ClickstreamListener</listener-class>
+        <listener-class>com.google.code.clickstream.ClickstreamListener</listener-class>
     </listener>
 
     <servlet>
         <servlet-name>activeStreams</servlet-name>
-        <servlet-class>com.opensymphony.clickstream.servlet.ActiveStreamsServlet</servlet-class>
+        <servlet-class>com.google.code.clickstream.servlet.ActiveStreamsServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

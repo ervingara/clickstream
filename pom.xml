@@ -7,9 +7,10 @@
     <version>2.0-SNAPSHOT</version>
     <name>clickstream</name>
     <url>http://code.google.com/p/clickstream</url>
+    <description>this project improves opensymphony clickstream by taking its 1.0.3 codebase and implementing requested features</description>
     <properties>
         <version.java>1.5</version.java>
-        <version.junit>3.8</version.junit>
+        <version.junit>4.7</version.junit>
         <version.servlet-api>2.5</version.servlet-api>
         <version.portlet-api>1.0</version.portlet-api>
         <version.commons-logging>1.1.1</version.commons-logging>
@@ -19,11 +20,26 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
                 <configuration>
                     <source>${version.java}</source>
                     <target>${version.java}</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.6.1</version>
+                <executions>
+                    <execution>
+                        <id>aggregate</id>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                        <phase>site</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
@@ -46,7 +62,7 @@
         <url>http://code.google.com/p/clickstream/issues/list</url>
     </issueManagement>
     <ciManagement>
-        <system>hudson</system>
+        <system></system>
         <url></url>
     </ciManagement>
     <licenses>

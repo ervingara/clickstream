@@ -9,13 +9,14 @@ import java.util.*;
  * The actual stream of clicks tracked during a user's navigation through a site.
  *
  * @author <a href="plightbo@hotmail.com">Patrick Lightbody</a>
+ * @author <a href="contact@chenwang.org">Chen Wang</a>
  */
 public class Clickstream implements Serializable {
     /** The stream itself: a list of click events. */
-    private List clickstream = Collections.synchronizedList(new ArrayList());
+    private List<ClickstreamRequest> clickstream = Collections.synchronizedList(new ArrayList());
 
     /** The attributes. */
-    private Map attributes = new HashMap();
+    private Map<String, Object> attributes = new HashMap();
 
     /** The host name. */
     private String hostname;
@@ -162,7 +163,7 @@ public class Clickstream implements Serializable {
      *
      * @return the actual List of ClickstreamRequest objects
      */
-    public List getStream() {
+    public List<ClickstreamRequest> getStream() {
         return clickstream;
     }
 }
