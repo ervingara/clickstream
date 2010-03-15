@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
+    version="1.0">
+
+    <portlet>
+        <portlet-name>portal-clickstreams</portlet-name>
+        <portlet-class>com.google.code.clickstream.portlet.ActiveStreamsPortlet</portlet-class>
+            <init-param>
+                <name>fragment</name>
+                <value>true</value>
+            </init-param>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>view</portlet-mode>
+        </supports>
+        <portlet-info>
+            <title>Portal Clickstreams</title>
+        </portlet-info>
+    </portlet>
+    
+</portlet-app>
