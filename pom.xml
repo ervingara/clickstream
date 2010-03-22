@@ -77,6 +77,7 @@
         <developerConnection>scm:svn:https://clickstream.googlecode.com/svn/trunk</developerConnection>
         <url>http://code.google.com/p/clickstream/source/browse/trunk</url>
     </scm>
+    <!--
     <distributionManagement>
         <site>
             <id>googlecode</id>
@@ -91,5 +92,5 @@
             <url>svn:https://clickstream.googlecode.com/svn/release-repo</url>
         </repository>
     </distributionManagement>
-
+    -->
 </project>
